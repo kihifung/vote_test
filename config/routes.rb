@@ -3,6 +3,15 @@ Rails.application.routes.draw do
     member do
       post :vote
     end
-    get :result, to: "candidates#result"
+
+
   end  
+  
+  resources :pages do
+    collection do
+      get :operate, to: "pages#operate"
+      get :result, to: "pages#result"
+    end
+  end  
+
 end

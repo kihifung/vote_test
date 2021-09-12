@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_09_12_160401) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "candidates", force: :cascade do |t|
     t.string "name"
     t.string "party"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_160401) do
   end
 
   create_table "vote_logs", force: :cascade do |t|
-    t.integer "candidate_id", null: false
+    t.bigint "candidate_id", null: false
     t.string "ip_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

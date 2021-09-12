@@ -28,8 +28,9 @@ class CandidatesController < ApplicationController
   end
   def vote
     @candidate.vote_logs.create(ip_address: request.remote_ip) if @candidate
-    redirect_to candidates_path, notice: "完成投票!"
-    # redirect_to candidate_result_path, notice: "完成投票!"
+    # redirect_to candidates_path, notice: "完成投票!"
+    # redirect_to candidates_path, notice: "完成投票!"
+    render :result, notice: "完成投票!"
   end
 
   def destroy

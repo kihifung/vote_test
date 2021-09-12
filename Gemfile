@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 5.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'simple_form', '~> 5.1'
-
+gem 'pg', '~> 1.2', '>= 1.2.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

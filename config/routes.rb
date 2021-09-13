@@ -6,8 +6,10 @@ Rails.application.routes.draw do
       post :vote
     end
     collection do
-      get :operate
+      post :operate
       get :result
+      get :poll
+      # get :show, to: 'candidates#show'
     end
 
   end  

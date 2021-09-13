@@ -1,17 +1,17 @@
 <div class="container table">
 <%= form_for(candidate) do |f| %>
   <%= f.label :name, "姓名" %>
-  <%= f.text_field :name %> <br />
+  <%= f.text_field :name, class:"table" %> <br />
 
   <%= f.label :age, "年份" %>
-  <%= f.text_field :age %> <br />
+  <%= f.text_field :age, class:"table"  %> <br />
 
   <%= f.label :party, "類型" %>
-  <%= f.text_field :party %> <br />
+  <%= f.text_field :party, class:"table"  %> <br />
 
   <%= f.label :politics, "內容" %>
-  <%= f.text_area :politics %> <br />
-
+  <%= f.text_area :politics, class:"table"  %> <br />
+  <div class="container mt-5"></div>
   <%= f.submit :更新選項, class:"btn btn-success btn-xs" %>
 <% end %>
 

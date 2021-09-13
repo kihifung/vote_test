@@ -7,7 +7,9 @@ class CandidatesController < ApplicationController
 
   def show
   end  
-
+  def poll
+    @candidates = Candidate.all
+  end
   def new
     @candidate = Candidate.new
   end  

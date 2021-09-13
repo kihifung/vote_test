@@ -1,16 +1,18 @@
-<% if @candidate %>
+<div class="mt-5">
+<% if @candidate.vote_logs.id.size >= 2 %>
 
-  <h1><%= @candidate.name %></h1>
+  <h1><%= @candidate.id.name %></h1>
 
   <ul>
-    <li>party: <%= @candidate.party %></li>
-    <li>age: <%= @candidate.age %></li>
-    <li>politics: <%= @candidate.politics %></li>
+    <li>party: <%= @candidate.id.party %></li>
+    <li>age: <%= @candidate.id.age %></li>
+    <li>politics: <%= @candidate.id.politics %></li>
   </ul>
 
 <% else %>
 
-<h1>No Record found!</h1>
+<h1>投票尚未完成</h1>
+<h3>有人還沒完成投票，目前沒有結果，請稍待！</h3>
+<h3>待投票完成後，重新整理畫面，謝謝！</h3>
 
 <% end %>
-©

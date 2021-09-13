@@ -1,20 +1,25 @@
 class CandidatesController < ApplicationController
-  before_action :find_candidate, only: [:edit, :update, :vote, :destroy]
+  before_action :find_candidate, only: [:show, :edit, :update, :vote, :destroy]
 
   def index
-    @candidate = Candidate.all
+    @candidates = Candidate.all
   end
-  def new
-    @candidate = Candidate.new
+
+  def show
   end  
 
+  def new
+    @candidate = Candidate.new
+    render layout: "backend"
+  end  
   def create
     @candidate = Candidate.new(candidate_params)
     if @candidate.save    # 成功
-      redirect_to candidates_path, notice: "新增候選人成功!"
+      redirect_to candidates_path, notice: "新增選項成功!"
     else  # 失敗
       render :new
     end
+    render layout: "backend"
   end
   def edit
   end
@@ -25,18 +30,25 @@ class CandidatesController < ApplicationController
     else  # 失敗
       render :edit
     end
+    render layout: "backend"
   end
   def vote
     @candidate.vote_logs.create(ip_address: request.remote_ip) if @candidate
-    redirect_to result_pages_path, notice: "完成投票!"
+    redirect_to result_candidates_path, notice: "完成投票!"
     # redirect_to candidates_path, notice: "完成投票!"
     # render :result, notice: "完成投票!"
   end
 
   def destroy
     @candidate.destroy if @candidate
-    redirect_to candidates_path, notice: "候選人資料已刪除!"
+    redirect_to candidates_path, notice: "選項資料已刪除!"
+    render layout: "backend"
   end
+  def result
+    @candidate = Candidate.all
+  end
+  def operate
+  end  
 
   private
   def candidate_params

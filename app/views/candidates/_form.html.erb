@@ -1,7 +1,7 @@
-<%= simple_form_for(candidate) do |f| %>
+<%= simple_form_for(@candidate) do |f| %>
   <%= f.input :name, label: "姓名" %>
   <%= f.input :age, label: "年齡" %>
   <%= f.input :party, label: "政黨" %>
-  <%= f.input :politics, label: "政見" %>
+  <%= f.input :politics, label: "內容描述" %>
   <%= f.submit :新增選項 %>
 <% end %>

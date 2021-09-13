@@ -10,6 +10,8 @@ module VoteTest
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.hosts << "0.0.0.0"
+    config.hosts << "localhost"
     config.hosts << "votetestpage.herokuapp.com"
     # Configuration for the application, engines, and railties goes here.
     #

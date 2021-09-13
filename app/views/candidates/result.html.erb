@@ -1,12 +1,11 @@
 <h1>投票結果</h1>
-<h2>候選人列表</h2>
+<h2>選項列表</h2>
 
 <table class="table">
   <thead>
     <tr>
-      <td>候選人姓名</td>
-      <td>政黨</td>
-      <td>政見</td>
+      <td>選項姓名</td>
+      <td>內容描述</td>
       <td>得票數</td>
     </tr>
   </thead>
@@ -14,11 +13,10 @@
     <% @candidate.each do |candidate| %>
     <tr>
       <td><%= candidate.name %>(年齡：<%= candidate.age %> 歲)</td>
-      <td><%= candidate.party %></td>
       <td><%= candidate.politics %></td>
       <td><%= candidate.vote_logs.count %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to '回候選人列表', candidates_path %>
+<%= link_to '回選項列表', candidates_path %>

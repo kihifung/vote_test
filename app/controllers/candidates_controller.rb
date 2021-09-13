@@ -10,7 +10,6 @@ class CandidatesController < ApplicationController
 
   def new
     @candidate = Candidate.new
-    render layout: "backend"
   end  
   def create
     @candidate = Candidate.new(candidate_params)
@@ -19,7 +18,6 @@ class CandidatesController < ApplicationController
     else  # 失敗
       render :new
     end
-    render layout: "backend"
   end
   def edit
   end
@@ -30,7 +28,6 @@ class CandidatesController < ApplicationController
     else  # 失敗
       render :edit
     end
-    render layout: "backend"
   end
   def vote
     @candidate.vote_logs.create(ip_address: request.remote_ip) if @candidate
@@ -42,7 +39,6 @@ class CandidatesController < ApplicationController
   def destroy
     @candidate.destroy if @candidate
     redirect_to candidates_path, notice: "選項資料已刪除!"
-    render layout: "backend"
   end
   def result
     @candidate = Candidate.all

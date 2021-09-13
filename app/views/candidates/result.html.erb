@@ -1,22 +1,24 @@
-<h1>投票結果</h1>
-<h2>選項列表</h2>
-
+<h1 class="container">投票結果</h1>
 <table class="table">
   <thead>
     <tr>
       <td>選項姓名</td>
-      <td>內容描述</td>
+      <td>內容</td>
       <td>得票數</td>
     </tr>
   </thead>
   <tbody>
     <% @candidate.each do |candidate| %>
     <tr>
-      <td><%= candidate.name %>(年齡：<%= candidate.age %> 歲)</td>
+      <td><%= candidate.name %>(年份：<%= candidate.age %> )</td>
       <td><%= candidate.politics %></td>
-      <td><%= candidate.vote_logs.count %></td>
+      <td><%= candidate.vote_logs.size %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to '回選項列表', candidates_path %>
+
+<div class="btn btn-light">
+<%= link_to '回主畫面', candidates_path %>
+
+</div>

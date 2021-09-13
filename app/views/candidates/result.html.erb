@@ -49,8 +49,52 @@
 </div> 
 <%
 =end%>
+<div class="mt-5">
+<div class="mt-5">
+<div class="mt-5">
+<div class="mt-5">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
 
+<table class="table">
+  <thead>
+    <tr>
+      <td>選項名稱</td>
+      <td>年份</td>
+      <td>類型</td>
+      <td>內容</td>
+      <td>處理</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+    <tr>
+      <td><%= candidate.name %></td>
+      <td><%= candidate.age %></td>
+      <td><%= candidate.party %></td>
+      <td><%= candidate.politics %></td>
+      <td>
+        <%= link_to "編輯", edit_candidate_path(candidate) %>
+        <%= link_to "刪除", candidate_path(candidate), method: "delete", data: { confirm: "確認刪除" } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 
 

@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* [實作連結](https://votetestpage.herokuapp.com/candidates)

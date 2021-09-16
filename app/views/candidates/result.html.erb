@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <td>選項名稱</td>
+      <td>年份</td>
       <td>類型</td>
       <td>內容</td>
       <td>得票數</td>
@@ -12,7 +13,8 @@
   <tbody>
     <% @candidate.each do |candidate| %>
     <tr>
-      <td><%= candidate.name %>(年份：<%= candidate.age %> )</td>
+      <td><%= candidate.name %></td>
+      <td><%= candidate.age %></td>
       <td><%= candidate.party %></td>
       <td><%= candidate.politics %></td>
       <td><%= candidate.vote_logs.size %></td>

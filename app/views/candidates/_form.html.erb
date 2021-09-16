@@ -1,16 +1,9 @@
 <div class="container table">
-<%= form_for(candidate) do |f| %>
-  <%= f.label :name, "姓名" %>
-  <%= f.text_field :name, class:"table" %> <br />
-
-  <%= f.label :age, "年份" %>
-  <%= f.text_field :age, class:"table"  %> <br />
-
-  <%= f.label :party, "類型" %>
-  <%= f.text_field :party, class:"table"  %> <br />
-
-  <%= f.label :politics, "內容" %>
-  <%= f.text_area :politics, class:"table"  %> <br />
+<%= simple_form_for(candidate) do |f| %>
+  <%= f.input :name, label: "姓名" %>
+  <%= f.input :age, label: "年份" %>
+  <%= f.input :party, label: "類型" %>
+  <%= f.input :politics, label: "內容" %>
   <div class="container mt-5"></div>
   <%= f.submit :更新選項, class:"btn btn-success btn-xs" %>
 <% end %>

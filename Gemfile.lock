@@ -188,6 +188,9 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     simple_token_authentication (1.17.0)
       actionmailer (>= 3.2.6, < 7)
       actionpack (>= 3.2.6, < 7)
@@ -251,6 +254,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   sass-rails (>= 6)
   selenium-webdriver
+  simple_form (~> 5.1)
   simple_token_authentication (~> 1.0)
   spring
   tailwind_views_generator (~> 0.0.2)
